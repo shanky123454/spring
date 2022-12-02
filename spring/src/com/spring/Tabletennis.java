@@ -1,21 +1,25 @@
 package com.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("hurray!")// or we can also give the name of the class starting with small.
+//@Component("hurray!")// or we can also give the name of the class starting with small.
+@Component
 public class Tabletennis implements Coach {
+	@Autowired // field injection
+	@Qualifier("happyFortuneService")// if we implement interface in more than one class then we have to specify by Qualifier keyword which class/bean-id we are using
+	public FortuneService fortuneservice;
+
 	public Tabletennis()
 	{
 		System.out.println("inside tabletennis constructor");
-	}
-	//@Autowired // field injection
-	public FortuneService fortuneservice;
-	@Autowired// constructor injection
-	public Tabletennis(FortuneService thefortuneservice)
+	}	
+	//@Autowired     // constructor injection
+	/*public Tabletennis(FortuneService thefortuneservice)
 	{
 		fortuneservice = thefortuneservice;
-	}
+	}*/
 	/*@Autowired// setter injection
 	public void setfortuneservice(FortuneService thefortuneservice)
 	{
