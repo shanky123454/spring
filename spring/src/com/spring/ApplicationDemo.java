@@ -10,8 +10,8 @@ public class ApplicationDemo {
 		//ClassPathXmlApplicationContext context2 = new ClassPathXmlApplicationContext("applicationcontext.xml");
 
 		//get the bean from spring container
-		Coach thecoach = context.getBean("tabletennis", Coach.class);
-		//Coach thecoach1 = context.getBean("HappyFortuneService",Coach.class);
+		Coach thecoach = context.getBean("hurray!", Coach.class);
+		FortuneService thecoach1 = context.getBean("happyFortuneService",FortuneService.class);
 		//Coach thecoach1 = context.getBean("HappyFortuneService", Coach.class);
 
 		//call a method on the bean
@@ -19,6 +19,8 @@ public class ApplicationDemo {
 		System.out.println(thecoach.getWork());
 		//System.out.println(thecoach.getWork());
 		System.out.println(thecoach.fortune());
+
+		System.out.println(thecoach1.fortune());
 
 		//close the context
 		context.close();
