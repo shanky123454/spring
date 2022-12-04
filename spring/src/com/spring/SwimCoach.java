@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SwimCoach  implements Coach{
-	@Qualifier("sadFortuneService")
+	@Qualifier("happyFortuneService")
 	public FortuneService fortuneservice;
 	@Autowired
 	public SwimCoach(FortuneService thefortuneservice)

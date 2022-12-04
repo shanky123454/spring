@@ -1,3 +1,4 @@
+
 package com.spring;
 
 import org.springframework.context.annotation.Bean;
@@ -10,26 +11,38 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @ComponentScan("demo.spring")
 @PropertySource("classpath:sport.properties")
 public class SportConfig {
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer
-					propertySourcesPlaceHolderConfigurer() {
-		
-		return new PropertySourcesPlaceholderConfigurer();
+	public SportConfig()
+	{
+		System.out.println("inside the sportconfig constructor");
 	}
+@Bean
+		public FortuneService happyFortuneService() {
+			return new   HappyFortuneService();
+		}
 	
-	// define bean for our sad fortune service
 	@Bean
 	public FortuneService sadFortuneService() {
 		return new SadFortuneService();
 	}
+ 
 	
 	// define bean for our swim coach AND inject dependency
-	@Bean
+
+  @Bean
 	public Coach swimCoach() {
 		SwimCoach mySwimCoach = new SwimCoach(sadFortuneService());
 		
 		return mySwimCoach;
 	}
 	
-
+@Bean
+	public Coach tabletennis() {
+	 Tabletennis mytabletennis=new Tabletennis(happyFortuneService());
+	 
+		
+		return mytabletennis;
+	}
 }
+
+	  
+   

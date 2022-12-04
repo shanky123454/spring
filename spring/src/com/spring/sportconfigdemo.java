@@ -7,9 +7,10 @@ public class sportconfigdemo {
 	public static void main(String[] args) {
 	
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Javasportconfig.class);
-		Coach thecoach = context.getBean("tabletennis", Coach.class);
+		Tabletennis thecoach = context.getBean("tabletennis", Tabletennis.class);
 		System.out.println(thecoach.fortune());
 		System.out.println(thecoach.getDailyWorkout());
+		System.out.println(thecoach.getWork());
 		context.close();
 		
 	}
