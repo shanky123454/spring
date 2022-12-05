@@ -13,7 +13,7 @@ public class SwimConfig {
 		System.out.println(thecoach.getDailyWorkout());
 		System.out.println("email: " + thecoach.getEmail());
 		System.out.println("team: " + thecoach.getTeam());
-		context.close();
+		context.close(); 
 		
 
 

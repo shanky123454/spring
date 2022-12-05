@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.spring")
-public class Javasportconfig{
+public class Javasportconfig{ 
   //@Autowired
  // @Qualifier("SadFortuneService")
 

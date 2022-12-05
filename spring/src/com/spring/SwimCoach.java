@@ -5,14 +5,12 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SwimCoach  implements Coach{
 	@Qualifier("happyFortuneService")
-	public FortuneService fortuneservice;
+	public FortuneService fortuneservice; 
 	@Autowired
 	public SwimCoach(FortuneService thefortuneservice)
 	{
