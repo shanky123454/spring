@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class HappyFortuneService implements FortuneService {
 	public String fortune() 
 	{
-		String s = new String("shashank");
+		String s = new String("shashank"); 
 		return s;
 	}
 	}
